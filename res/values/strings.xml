@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Unit Converter</string>
+	<string name="unit_from_prompt">Original Unit</string>
+	<string name="unit_to_prompt">Desired Unit</string>
+	<string name="area_convert_screen_name">Area Converter</string>
+	<string name="length_convert_screen_name">Length Converter</string>
+	<string name="volume_convert_screen_name">Volume Converter</string>
+	
+
+	<string name="mm">Millimetre</string>
+	<string name="cm">Centimetre</string>
+	<string name="m">Metre</string>
+	<string name="km">Kilometre</string>
+	<string name="inches">Inch</string>
+	<string name="feet">Feet</string>
+	<string name="yards">Yard</string>
+	<string name="miles">Mile</string>
+	
+	<string name="invalid_number">Please enter a number!</string>
+
+	<string-array name="area">
+		<item>@string/mm</item>
+		<item>@string/cm</item>
+		<item>@string/m</item>
+		<item>@string/km</item>
+		<item>@string/inches</item>
+		<item>@string/feet</item>
+		<item>@string/yards</item>
+		<item>@string/miles</item>
+	</string-array>
+	
+	<string-array name="length">
+		<item>@string/mm</item>
+		<item>@string/cm</item>
+		<item>@string/m</item>
+		<item>@string/km</item>
+		<item>@string/inches</item>
+		<item>@string/feet</item>
+		<item>@string/yards</item>
+		<item>@string/miles</item>
+	</string-array>
+	
+	<string-array name="volume">
+		<item>@string/mm</item>
+		<item>@string/cm</item>
+		<item>@string/m</item>
+		<item>@string/km</item>
+		<item>@string/inches</item>
+		<item>@string/feet</item>
+		<item>@string/yards</item>
+		<item>@string/miles</item>
+	</string-array>
+	
+	<string-array name="main_menu">
+		<item>Area</item>
+		<item>Length</item>
+		<item>Volume</item>
+	</string-array>
+
+</resources>

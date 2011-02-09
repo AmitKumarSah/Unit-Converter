@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:myapp="http://schemas.android.com/apk/res/com.joopware.unitconverter"
+	android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+	<ListView android:id="@+id/ListViewId" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+
+	<com.admob.android.ads.AdView android:id="@+id/ad"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_below="@id/ListViewId" android:layout_alignTop="@id/ListViewId"
+		myapp:backgroundColor="#000000" myapp:primaryTextColor="#FFFFFF"
+		myapp:refreshInterval="4" myapp:secondaryTextColor="#CCCCCC" />
+
+</LinearLayout>
