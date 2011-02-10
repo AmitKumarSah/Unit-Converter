@@ -6,10 +6,4 @@
 	<ListView android:id="@+id/ListViewId" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" />
 
-	<com.admob.android.ads.AdView android:id="@+id/ad"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:layout_below="@id/ListViewId" android:layout_alignTop="@id/ListViewId"
-		myapp:backgroundColor="#000000" myapp:primaryTextColor="#FFFFFF"
-		myapp:refreshInterval="4" myapp:secondaryTextColor="#CCCCCC" />
-
 </LinearLayout>
