@@ -44,15 +44,7 @@
 		android:numeric="decimal"
 		android:maxLength="15">
 	</EditText>
-
-	<Button
-        android:id="@+id/convertAreaButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sourceArea"
-        android:layout_alignParentLeft="true"
-        android:text="Convert">
-	</Button>
+	<Button android:text="Convert" android:id="@+id/convertAreaButton" android:layout_width="fill_parent" android:layout_height="wrap_content"></Button>
 
 	<TextView
         android:id="@+id/resultLabel"
