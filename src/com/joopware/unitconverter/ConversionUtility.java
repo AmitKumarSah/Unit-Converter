@@ -2,7 +2,6 @@ package com.joopware.unitconverter;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * @author	Jeremy Kemp
