@@ -7,7 +7,8 @@
 	<string name="area_convert_screen_name">Area Converter</string>
 	<string name="length_convert_screen_name">Length Converter</string>
 	<string name="volume_convert_screen_name">Volume Converter</string>
-	
+	<string name="currency_convert_screen_name">Currency Converter</string>
+	<string name="invalid_number">Please enter a number!</string>	
 
 	<string name="mm">Millimetre</string>
 	<string name="cm">Centimetre</string>
@@ -18,7 +19,66 @@
 	<string name="yards">Yard</string>
 	<string name="miles">Mile</string>
 	
-	<string name="invalid_number">Please enter a number!</string>
+	<string name="AED">AED - United Arab Emirates Dirham</string>
+	<string name="ARS">ARS - Argentine Peso</string>
+	<string name="AUD">AUD - Australian Dollar</string>
+	<string name="BBD">BBD - Barbadian Dollar</string>
+	<string name="BHD">BHD - Bahraini Dinar</string>
+	<string name="BRL">BRL - Brazilian Real</string>
+	<string name="CAD">CAD - Canadian Dollar</string>
+	<string name="CHF">CHF - Swiss Franc</string>
+	<string name="CLP">CLP - Chilean Peso</string>
+	<string name="CNY">CNY - Chinese Yuan</string>
+	<string name="CYP">CYP - Cyprus Pound</string>
+	<string name="CZK">CZK - Czech Koruna</string>
+	<string name="DKK">DKK - Danish Krone</string>
+	<string name="EEK">EEK - Estonian Kroon</string>
+	<string name="EGP">EGP - Egyptian Pound</string>
+	<string name="EUR">EUR - Euro</string>
+	<string name="GBP">GBP - British Pound Sterling</string>
+	<string name="HKD">HKD - Hong Kong Dollar</string>
+	<string name="HUF">HUF - Hungarian Forint</string>
+	<string name="IDR">IDR - Indonesian Rupiah</string>
+	<string name="ILS">ILS - Israeli Sheqel</string>
+	<string name="INR">INR - Indian Rupee</string>
+	<string name="ISK">ISK - Icelandic Krona</string>
+	<string name="JMD">JMD - Jamaican Dollar</string>
+	<string name="JOD">JOD - Jordanian Dinar</string>
+	<string name="JPY">JPY - Japanese Yen</string>
+	<string name="KES">KES - Kenyan Shilling</string>
+	<string name="KRW">KRW - South Korean Won</string>
+	<string name="KWD">KWD - Kuwaiti Dinar</string>
+	<string name="LBP">LBP - Lebanese Pound</string>
+	<string name="LKR">LKR - Sri Lankan Rupee</string>
+	<string name="LTL">LTL - Lithuanian Litas</string>
+	<string name="LVL">LVL - Latvian Lats</string>
+	<string name="MAD">MAD - Moroccan Dirham</string>
+	<string name="MXN">MXN - Mexican Peso</string>
+	<string name="MYR">MYR - Malaysian Ringgit</string>
+	<string name="NAD">NAD - Namibian Dollar</string>
+	<string name="NGN">NGN - Nigerian Naira</string>
+	<string name="NOK">NOK - Norwegian Krone</string>
+	<string name="NPR">NPR - Nepalese Rupee</string>
+	<string name="NZD">NZD - New Zealand Dollar</string>
+	<string name="OMR">OMR - Omani Rial</string>
+	<string name="PAB">PAB - Panamanian Balboa</string>
+	<string name="PHP">PHP - Philippine Peso</string>
+	<string name="PKR">PKR - Pakistani Rupee</string>
+	<string name="PLN">PLN - Polish Zloty</string>
+	<string name="QAR">QAR - Qatari Riyal</string>
+	<string name="RON">RON - Romanian Leu</string>
+	<string name="RUB">RUB - Russian Rouble</string>
+	<string name="SAR">SAR - Saudi Riyal</string>
+	<string name="SEK">SEK - Swedish Krona</string>
+	<string name="SGD">SGD - Singapore Dollar</string>
+	<string name="THB">THB - Thai Baht</string>
+	<string name="TRY">TRY - Turkish Lira</string>
+	<string name="USD">USD - US Dollar</string>
+	<string name="VEF">VEF - Venezuelan Bolivar</string>
+	<string name="XAF">XAF - Central African CFA franc</string>
+	<string name="XCD">XCD - East Caribbean Dollar</string>
+	<string name="XOF">XOF - West African CFA franc</string>
+	<string name="ZAR">ZAR - South African Rand</string>
 
 	<string-array name="area">
 		<item>@string/mm</item>
@@ -29,6 +89,69 @@
 		<item>@string/feet</item>
 		<item>@string/yards</item>
 		<item>@string/miles</item>
+	</string-array>
+
+	<string-array name="currency">
+		<item>@string/AED</item>
+		<item>@string/ARS</item>
+		<item>@string/AUD</item>
+		<item>@string/BBD</item>
+		<item>@string/BHD</item>
+		<item>@string/BRL</item>
+		<item>@string/CAD</item>
+		<item>@string/CHF</item>
+		<item>@string/CLP</item>
+		<item>@string/CNY</item>
+		<item>@string/CYP</item>
+		<item>@string/CZK</item>
+		<item>@string/DKK</item>
+		<item>@string/EEK</item>
+		<item>@string/EGP</item>
+		<item>@string/EUR</item>
+		<item>@string/GBP</item>
+		<item>@string/HKD</item>
+		<item>@string/HUF</item>
+		<item>@string/IDR</item>
+		<item>@string/ILS</item>
+		<item>@string/INR</item>
+		<item>@string/ISK</item>
+		<item>@string/JMD</item>
+		<item>@string/JOD</item>
+		<item>@string/JPY</item>
+		<item>@string/KES</item>
+		<item>@string/KRW</item>
+		<item>@string/KWD</item>
+		<item>@string/LBP</item>
+		<item>@string/LKR</item>
+		<item>@string/LTL</item>
+		<item>@string/LVL</item>
+		<item>@string/MAD</item>
+		<item>@string/MXN</item>
+		<item>@string/MYR</item>
+		<item>@string/NAD</item>
+		<item>@string/NGN</item>
+		<item>@string/NOK</item>
+		<item>@string/NPR</item>
+		<item>@string/NZD</item>
+		<item>@string/OMR</item>
+		<item>@string/PAB</item>
+		<item>@string/PHP</item>
+		<item>@string/PKR</item>
+		<item>@string/PLN</item>
+		<item>@string/QAR</item>
+		<item>@string/RON</item>
+		<item>@string/RUB</item>
+		<item>@string/SAR</item>
+		<item>@string/SEK</item>
+		<item>@string/SGD</item>
+		<item>@string/THB</item>
+		<item>@string/TRY</item>
+		<item>@string/USD</item>
+		<item>@string/VEF</item>
+		<item>@string/XAF</item>
+		<item>@string/XCD</item>
+		<item>@string/XOF</item>
+		<item>@string/ZAR</item>
 	</string-array>
 	
 	<string-array name="length">
@@ -55,6 +178,7 @@
 	
 	<string-array name="main_menu">
 		<item>Area</item>
+		<item>Currency</item>
 		<item>Length</item>
 		<item>Volume</item>
 	</string-array>

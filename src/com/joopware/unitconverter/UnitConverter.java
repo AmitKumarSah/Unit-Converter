@@ -41,8 +41,9 @@ public class UnitConverter extends Activity
 				switch (position)
 				{
 					case 0:	myIntent = new Intent(getApplicationContext(), AreaActivity.class); startActivity(myIntent); break;
-					case 1:	myIntent = new Intent(getApplicationContext(), LengthActivity.class); startActivity(myIntent); break;
-					case 2:	myIntent = new Intent(getApplicationContext(), VolumeActivity.class); startActivity(myIntent); break;
+					case 1:	myIntent = new Intent(getApplicationContext(), CurrencyActivity.class); startActivity(myIntent); break;
+					case 2:	myIntent = new Intent(getApplicationContext(), LengthActivity.class); startActivity(myIntent); break;
+					case 3:	myIntent = new Intent(getApplicationContext(), VolumeActivity.class); startActivity(myIntent); break;	
 				}
 			}
 		});

@@ -1,4 +1,5 @@
 package com.joopware.unitconverter;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,14 +23,16 @@ public class SaxParser extends DefaultHandler{
 	private Currency currency;
 
 
-	public SaxParser(){
+	public SaxParser(String source){
 		currencyList = new ArrayList<Currency>();
+	}
+
+	public void runExample() {
 		parseDocument();
 		printData();
 	}
 
 	private void parseDocument() {
-
 		//get a factory
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 		try {
@@ -95,5 +98,7 @@ public class SaxParser extends DefaultHandler{
 		}else if (qName.equalsIgnoreCase("Category")) {
 			currency.setCategory(tempVal);
 		}		
-	}
+	
+
+}
 }

@@ -1,4 +1,5 @@
 package com.joopware.unitconverter;
+
 public class Currency {	
 	
 	private String title, link, guid, pubDate, description, category;

@@ -1,6 +1,8 @@
 package com.joopware.unitconverter;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author	Jeremy Kemp
@@ -275,6 +277,34 @@ public class ConversionUtility
 		volumeConversionValues.put("MileToMile", 1.0);
 	}
 	
+	public double calculateCurrency(double input, String from, String to)
+	{
+		Currency currency;
+		String sourceCurrency = from.substring(0, 3);
+		String desiredCurrency = to.substring(0, 3);
+		String delims = "[, ]";
+		String[] tokens;
+		double result, conversionRate;
+
+		
+		SaxParser rss = new SaxParser(sourceCurrency);
+		rss.runExample();
+
+		Iterator<Currency> currencyIterator = rss.currencyList.iterator();
+System.out.println("HOLY SHIT " + rss.currencyList.size());
+		while(currencyIterator.hasNext())
+		{
+			currency = currencyIterator.next();
+			if(currency.getTitle().substring(4, 6).equals(desiredCurrency))
+			{
+				tokens = currency.getDescription().split(delims);
+				conversionRate = Double.parseDouble(tokens[5]);
+				System.out.println("OMFG + " + conversionRate);
+			}
+		}
+		return 0;
+	}
+	
 	/**
 	 * This method will return a {@link double} with the conversion result
 	 * by looking up the conversion rate from {@link #lengthConversionValues}
@@ -292,8 +322,9 @@ public class ConversionUtility
 		switch (conversionType)
 		{
 			case 0: result = input * areaConversionValues.get(from + "To" + to); break;		//0 = Area
-			case 1: result = input * lengthConversionValues.get(from + "To" + to); break;	//1 = Length
-			case 2: result = input * volumeConversionValues.get(from + "To" + to); break;	//2 = Volume
+			case 1: result = calculateCurrency(input, from, to); break;							//1 = Currency
+			case 2: result = input * lengthConversionValues.get(from + "To" + to); break;	//2 = Length
+			case 3: result = input * volumeConversionValues.get(from + "To" + to); break;	//3 = Volume
 		}
 		return result;
 	}
