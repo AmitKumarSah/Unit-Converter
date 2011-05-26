@@ -22,6 +22,6 @@ public class CurrencyActivity extends ConvertActivity
 		
 		/*Sets up the listened for button clicks on the convert button. Also informs what type of calculation to perform
 		E.g. area, length etc*/
-		buttonListen(1);	//0 identifies area
+		buttonListen(1);	//1 identifies currency
 	}
-}	
+}
