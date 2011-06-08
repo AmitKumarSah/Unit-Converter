@@ -289,13 +289,12 @@ public class ConversionUtility {
 		Currency currency;
 		String sourceCurrency = from.substring(0, 3);
 		String desiredCurrency = to.substring(0, 3);
-		String delims = "[, ]";
-		String[] tokens;
+		String description, subString;
 		double conversionRate = 1;
 
 		try {
 			// Create URL to XML file
-			URL url = new URL("http://themoneyconverter.com/GBP/rss.xml");
+			URL url = new URL("http://themoneyconverter.com/" + sourceCurrency + "/rss.xml");
 
 			// Get a SAXParser from the SAXParserFactory
 			SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -310,18 +309,19 @@ public class ConversionUtility {
 
 			// Parse the XML Data from the URL
 			xr.parse(new InputSource(url.openStream()));
-
 			
-			System.out.println("A test " + mySaxParser.currencyList.size());
-			
-			Iterator<Currency> currencyIterator = mySaxParser.currencyList.iterator();
+			Iterator<Currency> currencyIterator = mySaxParser.currencyList.iterator();			
 			while (currencyIterator.hasNext()) 
 			{
+			
 				currency = currencyIterator.next();
+				
 				if (currency.getTitle().substring(0, 3).equals(desiredCurrency)) 
 				{
-					tokens = currency.getDescription().split(delims);
-					conversionRate = Double.parseDouble(tokens[5]);
+					description = currency.getDescription();					
+					subString = description.substring(description.indexOf("=") + 2, description.indexOf("=") + 9);
+					conversionRate = Double.parseDouble(subString);
+					break;
 				}
 			}
 

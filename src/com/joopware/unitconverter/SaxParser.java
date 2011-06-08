@@ -1,7 +1,6 @@
 package com.joopware.unitconverter;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.xml.sax.Attributes;
@@ -22,24 +21,6 @@ public class SaxParser extends DefaultHandler
 	{
 		currencyList = new ArrayList<Currency>();
 	}
-	
-	public List<Currency> getCurrencyList()
-	{
-		return currencyList;
-	}
-	
-	/**
-	 * Iterate through the list and print
-	 * the contents
-	 */
-	public void printData()
-	{		
-		Iterator<Currency> currencyIterator = currencyList.iterator();
-		while(currencyIterator.hasNext()) 
-		{
-			System.out.println(currencyIterator.next().toString());
-		}
-	}
 
 	//Event Handlers
 	@Override
@@ -55,7 +36,7 @@ public class SaxParser extends DefaultHandler
 	}
 
 	@Override
-	public void characters(char[] ch, int start, int length) throws SAXException 
+	public void characters(char[] ch, int start, int length) 
 	{
 		tempVal = new String(ch,start,length);
 	}

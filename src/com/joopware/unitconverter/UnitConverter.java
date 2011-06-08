@@ -23,8 +23,8 @@ public class UnitConverter extends Activity
 	public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_menu_list);		
-
+		setContentView(R.layout.main_menu_list);
+	      
 		//Creates a ListView that is populated via the main_menu array and displays it to the screen.  
 		lv = (ListView)findViewById(R.id.ListViewId);
 		lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.main_menu)));
