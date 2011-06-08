@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:myapp="http://schemas.android.com/apk/res/com.joopware.unitconverter"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 	android:layout_width="fill_parent" android:layout_height="wrap_content">
 
-	<ListView android:id="@+id/ListViewId" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" />
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
 
-</LinearLayout>
+		<ListView android:id="@+id/ListViewId" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:gravity="bottom"
+		android:layout_alignParentBottom="true">
+
+		<com.google.ads.AdView android:id="@+id/adView"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			ads:adUnitId="a14d025037d4071" ads:adSize="BANNER"
+			ads:loadAdOnCreate="true" />
+	</LinearLayout>
+
+</RelativeLayout>

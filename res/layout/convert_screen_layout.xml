@@ -1,55 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
-	
-	<TextView
-        android:id="@+id/spinnerSelectSourceLabel"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Choose the original unit:">
-	</TextView>
-	
-	<Spinner 
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content" 
-		android:id="@+id/SpinnerSelectSourceAreaUnit"
-		android:prompt="@string/unit_from_prompt">
-	</Spinner>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
 
-	<TextView
-        android:id="@+id/spinnerSelectDesiredLabel"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Choose the desired unit:">
-	</TextView>
-	
-	<Spinner 
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content" 
-		android:id="@+id/SpinnerSelectDesiredAreaUnit"
-		android:prompt="@string/unit_to_prompt">
-	</Spinner>
-	
-	<TextView
-        android:id="@+id/sourceAreaLabel"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Original area value:">
-	</TextView>
-	
-	<EditText
-		android:id="@+id/sourceArea"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:numeric="decimal"
-		android:maxLength="15">
-	</EditText>
-	<Button android:text="Convert" android:id="@+id/convertAreaButton" android:layout_width="fill_parent" android:layout_height="wrap_content"></Button>
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical">
 
-	<TextView
-        android:id="@+id/resultLabel"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-	</TextView>
+		<TextView android:id="@+id/spinnerSelectSourceLabel"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:text="Choose the original unit:">
+		</TextView>
 
-</LinearLayout>
+		<Spinner android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:id="@+id/SpinnerSelectSourceAreaUnit"
+			android:prompt="@string/unit_from_prompt">
+		</Spinner>
+
+		<TextView android:id="@+id/spinnerSelectDesiredLabel"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:text="Choose the desired unit:">
+		</TextView>
+
+		<Spinner android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:id="@+id/SpinnerSelectDesiredAreaUnit"
+			android:prompt="@string/unit_to_prompt">
+		</Spinner>
+
+		<TextView android:id="@+id/sourceAreaLabel"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:text="Original area value:">
+		</TextView>
+
+		<EditText android:id="@+id/sourceArea" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:numeric="decimal"
+			android:maxLength="15">
+		</EditText>
+		<Button android:text="Convert" android:id="@+id/convertAreaButton"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"></Button>
+
+		<TextView android:id="@+id/resultLabel" android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+		</TextView>
+
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:gravity="bottom"
+		android:layout_alignParentBottom="true">
+
+		<com.google.ads.AdView android:id="@+id/adView"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			ads:adUnitId="a14d025037d4071" ads:adSize="BANNER"
+			ads:loadAdOnCreate="true" />
+	</LinearLayout>
+
+</RelativeLayout>
