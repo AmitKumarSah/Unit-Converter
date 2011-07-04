@@ -12,6 +12,7 @@ public class CurrencyActivity extends ConvertActivity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		setRequestedOrientation(1);
 		setContentView(R.layout.convert_screen_layout);
 		
 		//Populates the source spinner with area unit types
