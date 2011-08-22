@@ -7,14 +7,7 @@ public class Currency {
 	public Currency(){
 		
 	}
-	
-	public Currency(String name, int id, int age, String type) {
-//		this.name = name;
-//		this.age = age;
-//		this.id  = id;
-//		this.type = type;
-		
-	}
+
 	public String getTitle() {
 		return title;
 	}
