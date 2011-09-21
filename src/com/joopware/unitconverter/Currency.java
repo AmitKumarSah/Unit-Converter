@@ -1,62 +1,72 @@
 package com.joopware.unitconverter;
 
-public class Currency {	
+public class Currency 
+{	
 	
 	private String title, link, guid, pubDate, description, category;
-	
-	public Currency(){
-		
-	}
 
-	public String getTitle() {
+	public String getTitle() 
+	{
 		return title;
 	}
 
-	public void setTitle(String title) {
+	public void setTitle(String title) 
+	{
 		this.title = title;
 	}
 
-	public String getLink() {
+	public String getLink() 
+	{
 		return link;
 	}
 
-	public void setLink(String link) {
+	public void setLink(String link) 
+	{
 		this.link = link;
 	}
 
-	public String getGuid() {
+	public String getGuid() 
+	{
 		return guid;
 	}
 
-	public void setGuid(String guid) {
+	public void setGuid(String guid) 
+	{
 		this.guid = guid;
 	}
 	
-	public String getPubDate() {
+	public String getPubDate() 
+	{
 		return pubDate;
 	}
 
-	public void setPubDate(String pubDate) {
+	public void setPubDate(String pubDate) 
+	{
 		this.pubDate = pubDate;
 	}	
 	
-	public String getDescription() {
+	public String getDescription() 
+	{
 		return description;
 	}
 	
-	public void setDescription(String description) {
+	public void setDescription(String description) 
+	{
 		this.description = description;
 	}
 	
-	public String getCategory() {
+	public String getCategory() 
+	{
 		return category;
 	}
 	
-	public void setCategory(String category) {
+	public void setCategory(String category) 
+	{
 		this.category = category;
 	}
 	
-	public String toString() {
+	public String toString() 
+	{
 		StringBuffer sb = new StringBuffer();
 		sb.append("Currency Details - ");
 		sb.append("Title:" + getTitle());
