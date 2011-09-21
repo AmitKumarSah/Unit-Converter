@@ -14,21 +14,24 @@ import org.xml.sax.XMLReader;
  * @author Jeremy Kemp
  * @author http://www.jeremykemp.co.uk/
  */
-public class ConversionUtility {
+public class ConversionUtility 
+{
 	private HashMap<String, Double> areaConversionValues,
-			lengthConversionValues, volumeConversionValues;
+	lengthConversionValues, volumeConversionValues;
 
 	/**
 	 * The constructor initialises each HashMap and fills it with all the
 	 * correct conversion rates.
 	 */
-	public ConversionUtility() {
+	public ConversionUtility() 
+	{
 		initialiseAreaValues();
 		initialiseLengthValues();
 		initialiseVolumeValues();
 	}
 
-	public void initialiseAreaValues() {
+	public void initialiseAreaValues() 
+	{
 		areaConversionValues = new HashMap<String, Double>();
 
 		// millimetre to X
@@ -112,7 +115,8 @@ public class ConversionUtility {
 		areaConversionValues.put("MileToMile", 1.0);
 	}
 
-	public void initialiseLengthValues() {
+	public void initialiseLengthValues() 
+	{
 		lengthConversionValues = new HashMap<String, Double>();
 
 		// millimetre to X
@@ -196,20 +200,19 @@ public class ConversionUtility {
 		lengthConversionValues.put("MileToMile", 1.0);
 	}
 
-	public void initialiseVolumeValues() {
+	public void initialiseVolumeValues() 
+	{
 		volumeConversionValues = new HashMap<String, Double>();
 
 		// millimetre to X
 		volumeConversionValues.put("MillimetreToMillimetre", 1.0);
 		volumeConversionValues.put("MillimetreToCentimetre", 0.001);
 		volumeConversionValues.put("MillimetreToMetre", 0.0000000010);
-		volumeConversionValues.put("MillimetreToKilometre",
-				0.0000000000000000010);
+		volumeConversionValues.put("MillimetreToKilometre",	0.0000000000000000010);
 		volumeConversionValues.put("MillimetreToInch", 0.0000610237441);
 		volumeConversionValues.put("MillimetreToFeet", 0.0000000353146667);
 		volumeConversionValues.put("MillimetreToYard", 0.00000000130795062);
-		volumeConversionValues.put("MillimetreToMile",
-				0.000000000000000000239912759);
+		volumeConversionValues.put("MillimetreToMile", 0.000000000000000000239912759);
 
 		// Centimetre to X
 		volumeConversionValues.put("CentimetreToMillimetre", 1000.0);
@@ -219,8 +222,7 @@ public class ConversionUtility {
 		volumeConversionValues.put("CentimetreToInch", 0.0610237441);
 		volumeConversionValues.put("CentimetreToFeet", 0.0000353146667);
 		volumeConversionValues.put("CentimetreToYard", 0.00000130795062);
-		volumeConversionValues.put("CentimetreToMile",
-				0.000000000000000239912759);
+		volumeConversionValues.put("CentimetreToMile", 0.000000000000000239912759);
 
 		// metre to X
 		volumeConversionValues.put("MetreToMillimetre", 1000000000.0);
@@ -233,8 +235,7 @@ public class ConversionUtility {
 		volumeConversionValues.put("MetreToMile", 0.000000000239912759);
 
 		// Kilometre to X
-		volumeConversionValues.put("KilometreToMillimetre",
-				1000000000000000000.0);
+		volumeConversionValues.put("KilometreToMillimetre",	1000000000000000000.0);
 		volumeConversionValues.put("KilometreToCentimetre", 1000000000000000.0);
 		volumeConversionValues.put("KilometreToMetre", 1000000000.0);
 		volumeConversionValues.put("KilometreToKilometre", 1.0);
@@ -309,13 +310,13 @@ public class ConversionUtility {
 
 			// Parse the XML Data from the URL
 			xr.parse(new InputSource(url.openStream()));
-			
+
 			Iterator<Currency> currencyIterator = mySaxParser.currencyList.iterator();			
 			while (currencyIterator.hasNext()) 
 			{
-			
+
 				currency = currencyIterator.next();
-				
+
 				if (currency.getTitle().substring(0, 3).equals(desiredCurrency)) 
 				{
 					description = currency.getDescription();					
@@ -339,31 +340,32 @@ public class ConversionUtility {
 	 * multiplying against {@link input}.
 	 * 
 	 * @param input
-	 *            The input value.
+	 * The input value.
 	 * @param from
-	 *            Source unit type.
+	 * Source unit type.
 	 * @param to
-	 *            Desired unit type.
+	 * Desired unit type.
 	 * @param conversionType
-	 *            The desired conversion type. E.g. Area, Volume etc.
+	 * The desired conversion type. E.g. Area, Volume etc.
 	 * @return The result of the conversion
 	 */
-	public double convertValues(double input, String from, String to,
-			int conversionType) {
-		double result = 0;
-		switch (conversionType) {
-		case 0:
-			result = input * areaConversionValues.get(from + "To" + to);
-			break; // 0 = Area
-		case 1:
-			result = calculateCurrency(input, from, to);
-			break; // 1 = Currency
-		case 2:
-			result = input * lengthConversionValues.get(from + "To" + to);
-			break; // 2 = Length
-		case 3:
-			result = input * volumeConversionValues.get(from + "To" + to);
-			break; // 3 = Volume
+	public double convertValues(double input, String from, String to, int conversionType) 
+	{
+		double result = 0.0;
+		switch (conversionType) 
+		{
+			case 0:
+				result = input * areaConversionValues.get(from + "To" + to);
+				break; // 0 = Area
+			case 1:
+				result = calculateCurrency(input, from, to);
+				break; // 1 = Currency
+			case 2:
+				result = input * lengthConversionValues.get(from + "To" + to);
+				break; // 2 = Length
+			case 3:
+				result = input * volumeConversionValues.get(from + "To" + to);
+				break; // 3 = Volume
 		}
 		return result;
 	}
