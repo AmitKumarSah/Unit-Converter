@@ -1,6 +1,7 @@
 package com.joopware.unitconverter;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -359,6 +360,8 @@ public class ConversionUtility
 				break; // 0 = Area
 			case 1:
 				result = calculateCurrency(input, from, to);
+				DecimalFormat df = new DecimalFormat("#.##");
+				result = Double.parseDouble(df.format(result));
 				break; // 1 = Currency
 			case 2:
 				result = input * lengthConversionValues.get(from + "To" + to);
