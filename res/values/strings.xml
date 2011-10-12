@@ -7,6 +7,7 @@
 	<string name="area_convert_screen_name">Area Converter</string>
 	<string name="length_convert_screen_name">Length Converter</string>
 	<string name="volume_convert_screen_name">Volume Converter</string>
+	<string name="weight_convert_screen_name">Weight Converter</string>
 	<string name="currency_convert_screen_name">Currency Converter</string>
 	<string name="invalid_number">Please enter a number!</string>	
 

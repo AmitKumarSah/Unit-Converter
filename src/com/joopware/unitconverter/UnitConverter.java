@@ -57,6 +57,10 @@ public class UnitConverter extends Activity
 						myIntent = new Intent(getApplicationContext(), VolumeActivity.class); 
 						startActivity(myIntent); 
 						break;	
+					case 4:
+						myIntent = new Intent(getApplicationContext(), WeightActivity.class);
+						startActivity(myIntent);
+						break;
 				}
 			}
 		});

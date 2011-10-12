@@ -27,11 +27,13 @@
 		<activity android:name=".LengthActivity" android:label="@string/length_convert_screen_name" />
 
 		<activity android:name=".VolumeActivity" android:label="@string/volume_convert_screen_name" />
+		
+		<activity android:name=".WeightActivity" android:label="@string/weight_convert_screen_name" />
 
 		<activity android:name="com.google.ads.AdActivity"
         	android:configChanges="keyboard|keyboardHidden|orientation"/>
 
 	</application>
 
-	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="4"/>
+	<uses-sdk android:minSdkVersion="3" android:targetSdkVersion="3"/>
 </manifest>
