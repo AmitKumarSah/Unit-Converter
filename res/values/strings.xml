@@ -19,6 +19,15 @@
 	<string name="yards">Yard</string>
 	<string name="miles">Mile</string>
 	
+	<string name="milligrams">Milligrams</string>
+	<string name="grams">Grams</string>
+	<string name="kilograms">Kilograms</string>
+	<string name="oz">ounces</string>
+	<string name="lb">Pounds</string>
+	<string name="stone">Stones</string>
+	<string name="metricTon">Metric Ton</string>
+	<string name="ton">Ton</string>
+	
 	<string name="AED">AED - United Arab Emirates Dirham</string>
 	<string name="ARS">ARS - Argentine Peso</string>
 	<string name="AUD">AUD - Australian Dollar</string>
@@ -174,6 +183,17 @@
 		<item>@string/feet</item>
 		<item>@string/yards</item>
 		<item>@string/miles</item>
+	</string-array>
+	
+	<string-array name="weight">
+		<item>@string/milligrams</item>
+		<item>@string/grams</item>
+		<item>@string/kilograms</item>
+		<item>@string/oz</item>
+		<item>@string/lb</item>
+		<item>@string/stone</item>
+		<item>@string/metricTon</item>
+		<item>@string/ton</item>
 	</string-array>
 	
 	<string-array name="main_menu">
