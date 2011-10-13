@@ -340,6 +340,16 @@ public class ConversionUtility
 		weightConversionValues.put("PoundToStone", 0.0714285714);
 		weightConversionValues.put("PoundToMetric Ton", 0.00045359237);
 		weightConversionValues.put("PoundToTon", 0.0005);
+
+		// Stone to X
+		weightConversionValues.put("StoneToGram", 6350.29318);
+		weightConversionValues.put("StoneToMilligram", 6350293.18);
+		weightConversionValues.put("StoneToKilogram", 6.35029318);
+		weightConversionValues.put("StoneToOunce", 224.0);
+		weightConversionValues.put("StoneToPound", 14.0);
+		weightConversionValues.put("StoneToStone", 1.0);
+		weightConversionValues.put("StoneToMetric Ton", 0.00635029318);
+		weightConversionValues.put("StoneToTon", 0.007);
 	}
 
 	public double calculateCurrency(double input, String from, String to) 
