@@ -291,15 +291,6 @@ public class ConversionUtility
 	{
 		weightConversionValues = new HashMap<String, Double>();
 
-		//		<string name="milligrams">Milligram</string>
-		//		<string name="grams">Gram</string>
-		//		<string name="kilograms">Kilogram</string>
-		//		<string name="oz">Ounce</string>
-		//		<string name="lb">Pound</string>
-		//		<string name="stone">Stone</string>
-		//		<string name="metricTon">Metric Ton</string>
-		//		<string name="ton">Ton</string>
-
 		// Milligram to X
 		weightConversionValues.put("MilligramToMilligram", 1.0);
 		weightConversionValues.put("MilligramToGram", 0.001);
@@ -339,6 +330,16 @@ public class ConversionUtility
 		weightConversionValues.put("OunceToStone", 0.00446428571);
 		weightConversionValues.put("OunceToMetric Ton", 0.0000283495231);
 		weightConversionValues.put("OunceToTon", 0.0000312500);
+
+		// Pound to X
+		weightConversionValues.put("PoundToGram", 453.59237);
+		weightConversionValues.put("PoundToMilligram", 453592.37);
+		weightConversionValues.put("PoundToKilogram", 0.45359237);
+		weightConversionValues.put("PoundToOunce", 16.0);
+		weightConversionValues.put("PoundToPound", 1.0);
+		weightConversionValues.put("PoundToStone", 0.0714285714);
+		weightConversionValues.put("PoundToMetric Ton", 0.00045359237);
+		weightConversionValues.put("PoundToTon", 0.0005);
 	}
 
 	public double calculateCurrency(double input, String from, String to) 
