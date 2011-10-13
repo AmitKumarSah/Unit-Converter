@@ -20,12 +20,12 @@
 	<string name="yards">Yard</string>
 	<string name="miles">Mile</string>
 	
-	<string name="milligrams">Milligrams</string>
-	<string name="grams">Grams</string>
-	<string name="kilograms">Kilograms</string>
-	<string name="oz">ounces</string>
-	<string name="lb">Pounds</string>
-	<string name="stone">Stones</string>
+	<string name="milligrams">Milligram</string>
+	<string name="grams">Gram</string>
+	<string name="kilograms">Kilogram</string>
+	<string name="oz">Ounce</string>
+	<string name="lb">Pound</string>
+	<string name="stone">Stone</string>
 	<string name="metricTon">Metric Ton</string>
 	<string name="ton">Ton</string>
 	
@@ -202,6 +202,7 @@
 		<item>Currency</item>
 		<item>Length</item>
 		<item>Volume</item>
+		<item>Weight</item>
 	</string-array>
 
 </resources>

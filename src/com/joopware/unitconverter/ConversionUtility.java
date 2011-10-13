@@ -17,8 +17,8 @@ import org.xml.sax.XMLReader;
  */
 public class ConversionUtility 
 {
-	private HashMap<String, Double> areaConversionValues,
-	lengthConversionValues, volumeConversionValues;
+	private HashMap<String, Double> areaConversionValues, lengthConversionValues, volumeConversionValues, 
+	weightConversionValues;
 
 	/**
 	 * The constructor initialises each HashMap and fills it with all the
@@ -29,6 +29,7 @@ public class ConversionUtility
 		initialiseAreaValues();
 		initialiseLengthValues();
 		initialiseVolumeValues();
+		initialiseWeightValues();
 	}
 
 	public void initialiseAreaValues() 
@@ -286,6 +287,38 @@ public class ConversionUtility
 		volumeConversionValues.put("MileToMile", 1.0);
 	}
 
+	private void initialiseWeightValues()
+	{
+		weightConversionValues = new HashMap<String, Double>();
+		
+//		<string name="milligrams">Milligram</string>
+//		<string name="grams">Gram</string>
+//		<string name="kilograms">Kilogram</string>
+//		<string name="oz">Ounce</string>
+//		<string name="lb">Pound</string>
+//		<string name="stone">Stone</string>
+//		<string name="metricTon">Metric Ton</string>
+//		<string name="ton">Ton</string>
+		
+		// Milligram to X
+		weightConversionValues.put("MilligramToGram", 0.001);
+		weightConversionValues.put("MilligramToKilogram", 1000000.0);
+		weightConversionValues.put("MilligramToOunce", 352739.619);
+		weightConversionValues.put("MilligramToPound", 2204622.62);
+		weightConversionValues.put("MilligramToStone", 15747304.4);
+		weightConversionValues.put("MilligramToMetric Ton", 1000000000.0);
+		weightConversionValues.put("MilligramToTon", 1102311310.0);
+		
+		// Gram to X
+		weightConversionValues.put("GramToMilligram", 1000.0);
+		weightConversionValues.put("GramToKilogram", 0.001);
+		weightConversionValues.put("GramToOunce", 0.0352739619);
+		weightConversionValues.put("GramToPound", 0.00220462262);
+		weightConversionValues.put("GramToStone", 0.000157473044);
+		weightConversionValues.put("GramToMetric Ton", 1000000.0);
+		weightConversionValues.put("GramToTon", 1102311.31);
+	}
+	
 	public double calculateCurrency(double input, String from, String to) 
 	{
 		Currency currency;
@@ -348,7 +381,7 @@ public class ConversionUtility
 	 * Desired unit type.
 	 * @param conversionType
 	 * The desired conversion type. E.g. Area, Volume etc.
-	 * @return The result of the conversion
+	 * @return The result of the conversion.
 	 */
 	public double convertValues(double input, String from, String to, int conversionType) 
 	{
@@ -369,6 +402,9 @@ public class ConversionUtility
 			case 3:
 				result = input * volumeConversionValues.get(from + "To" + to);
 				break; // 3 = Volume
+			case 4:
+				result = input * weightConversionValues.get(from + "To" + to);
+				break; // 4 = Weight
 		}
 		return result;
 	}
