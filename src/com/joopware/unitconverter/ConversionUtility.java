@@ -360,6 +360,17 @@ public class ConversionUtility
 		weightConversionValues.put("MetricTonToStone", 157.473044);
 		weightConversionValues.put("MetricTonToMetricTon", 1.0);
 		weightConversionValues.put("MetricTonToTon", 1.10231131);
+
+		//  Ton to X
+		weightConversionValues.put("TonToGram", 907184.74);
+		weightConversionValues.put("TonToMilligram", 907184740.0);
+		weightConversionValues.put("TonToKilogram", 907.18474);
+		weightConversionValues.put("TonToOunce", 32000.0);
+		weightConversionValues.put("TonToPound", 2000.0);
+		weightConversionValues.put("TonToStone", 142.857143);
+		weightConversionValues.put("TonToMetricTon", 0.90718474);
+		weightConversionValues.put("TonToTon", 1.0);
+
 	}
 
 	public double calculateCurrency(double input, String from, String to) 
