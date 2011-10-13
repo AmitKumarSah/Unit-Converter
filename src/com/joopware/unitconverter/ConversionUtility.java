@@ -290,35 +290,57 @@ public class ConversionUtility
 	private void initialiseWeightValues()
 	{
 		weightConversionValues = new HashMap<String, Double>();
-		
-//		<string name="milligrams">Milligram</string>
-//		<string name="grams">Gram</string>
-//		<string name="kilograms">Kilogram</string>
-//		<string name="oz">Ounce</string>
-//		<string name="lb">Pound</string>
-//		<string name="stone">Stone</string>
-//		<string name="metricTon">Metric Ton</string>
-//		<string name="ton">Ton</string>
-		
+
+		//		<string name="milligrams">Milligram</string>
+		//		<string name="grams">Gram</string>
+		//		<string name="kilograms">Kilogram</string>
+		//		<string name="oz">Ounce</string>
+		//		<string name="lb">Pound</string>
+		//		<string name="stone">Stone</string>
+		//		<string name="metricTon">Metric Ton</string>
+		//		<string name="ton">Ton</string>
+
 		// Milligram to X
+		weightConversionValues.put("MilligramToMilligram", 1.0);
 		weightConversionValues.put("MilligramToGram", 0.001);
-		weightConversionValues.put("MilligramToKilogram", 1000000.0);
-		weightConversionValues.put("MilligramToOunce", 352739.619);
-		weightConversionValues.put("MilligramToPound", 2204622.62);
-		weightConversionValues.put("MilligramToStone", 15747304.4);
-		weightConversionValues.put("MilligramToMetric Ton", 1000000000.0);
-		weightConversionValues.put("MilligramToTon", 1102311310.0);
-		
+		weightConversionValues.put("MilligramToKilogram", 0.0000010);
+		weightConversionValues.put("MilligramToOunce", 0.0000352739619);
+		weightConversionValues.put("MilligramToPound", 0.00000220462262);
+		weightConversionValues.put("MilligramToStone", 0.000000157473044);
+		weightConversionValues.put("MilligramToMetric Ton", 0.0000000010);
+		weightConversionValues.put("MilligramToTon", 0.00000000110231131);
+
 		// Gram to X
 		weightConversionValues.put("GramToMilligram", 1000.0);
+		weightConversionValues.put("GramToGram", 1.0);
 		weightConversionValues.put("GramToKilogram", 0.001);
 		weightConversionValues.put("GramToOunce", 0.0352739619);
 		weightConversionValues.put("GramToPound", 0.00220462262);
 		weightConversionValues.put("GramToStone", 0.000157473044);
-		weightConversionValues.put("GramToMetric Ton", 1000000.0);
-		weightConversionValues.put("GramToTon", 1102311.31);
+		weightConversionValues.put("GramToMetric Ton", 0.0000010);
+		weightConversionValues.put("GramToTon", 0.00000110231131);
+
+		// Kilogram to X
+		weightConversionValues.put("KilogramToGram", 1000.0);
+		weightConversionValues.put("KilogramToMilligram", 1000000.0);
+		weightConversionValues.put("KilogramToKilogram", 1.0);
+		weightConversionValues.put("KilogramToOunce", 35.2739619);
+		weightConversionValues.put("KilogramToPound", 2.20462262);
+		weightConversionValues.put("KilogramToStone", 0.157473044);
+		weightConversionValues.put("KilogramToMetric Ton", 0.001);
+		weightConversionValues.put("KilogramToTon", 0.00110231131);
+
+		// Ounce to X
+		weightConversionValues.put("OunceToGram", 28.3495231);
+		weightConversionValues.put("OunceToMilligram", 28349.5231);
+		weightConversionValues.put("OunceToKilogram", 0.0283495231);
+		weightConversionValues.put("OunceToOunce", 1.0);
+		weightConversionValues.put("OunceToPound", 0.0625);
+		weightConversionValues.put("OunceToStone", 0.00446428571);
+		weightConversionValues.put("OunceToMetric Ton", 0.0000283495231);
+		weightConversionValues.put("OunceToTon", 0.0000312500);
 	}
-	
+
 	public double calculateCurrency(double input, String from, String to) 
 	{
 		Currency currency;
@@ -388,23 +410,23 @@ public class ConversionUtility
 		double result = 0.0;
 		switch (conversionType) 
 		{
-			case 0:
-				result = input * areaConversionValues.get(from + "To" + to);
-				break; // 0 = Area
-			case 1:
-				result = calculateCurrency(input, from, to);
-				DecimalFormat df = new DecimalFormat("#.##");
-				result = Double.parseDouble(df.format(result));
-				break; // 1 = Currency
-			case 2:
-				result = input * lengthConversionValues.get(from + "To" + to);
-				break; // 2 = Length
-			case 3:
-				result = input * volumeConversionValues.get(from + "To" + to);
-				break; // 3 = Volume
-			case 4:
-				result = input * weightConversionValues.get(from + "To" + to);
-				break; // 4 = Weight
+		case 0:
+			result = input * areaConversionValues.get(from + "To" + to);
+			break; // 0 = Area
+		case 1:
+			result = calculateCurrency(input, from, to);
+			DecimalFormat df = new DecimalFormat("#.##");
+			result = Double.parseDouble(df.format(result));
+			break; // 1 = Currency
+		case 2:
+			result = input * lengthConversionValues.get(from + "To" + to);
+			break; // 2 = Length
+		case 3:
+			result = input * volumeConversionValues.get(from + "To" + to);
+			break; // 3 = Volume
+		case 4:
+			result = input * weightConversionValues.get(from + "To" + to);
+			break; // 4 = Weight
 		}
 		return result;
 	}
