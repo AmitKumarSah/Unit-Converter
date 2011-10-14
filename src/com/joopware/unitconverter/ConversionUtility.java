@@ -352,14 +352,14 @@ public class ConversionUtility
 		weightConversionValues.put("StoneToTon", 0.007);
 
 		// Metric Ton to X
-		weightConversionValues.put("MetricTonToGram", 1000000.0);
-		weightConversionValues.put("MetricTonToMilligram", 1000000000.0);
-		weightConversionValues.put("MetricTonToKilogram", 1000.0);
-		weightConversionValues.put("MetricTonToOunce", 35273.9619);
-		weightConversionValues.put("MetricTonToPound", 2204.62262);
-		weightConversionValues.put("MetricTonToStone", 157.473044);
-		weightConversionValues.put("MetricTonToMetricTon", 1.0);
-		weightConversionValues.put("MetricTonToTon", 1.10231131);
+		weightConversionValues.put("Metric TonToGram", 1000000.0);
+		weightConversionValues.put("Metric TonToMilligram", 1000000000.0);
+		weightConversionValues.put("Metric TonToKilogram", 1000.0);
+		weightConversionValues.put("Metric TonToOunce", 35273.9619);
+		weightConversionValues.put("Metric TonToPound", 2204.62262);
+		weightConversionValues.put("Metric TonToStone", 157.473044);
+		weightConversionValues.put("Metric TonToMetric Ton", 1.0);
+		weightConversionValues.put("Metric TonToTon", 1.10231131);
 
 		//  Ton to X
 		weightConversionValues.put("TonToGram", 907184.74);
@@ -368,9 +368,8 @@ public class ConversionUtility
 		weightConversionValues.put("TonToOunce", 32000.0);
 		weightConversionValues.put("TonToPound", 2000.0);
 		weightConversionValues.put("TonToStone", 142.857143);
-		weightConversionValues.put("TonToMetricTon", 0.90718474);
+		weightConversionValues.put("TonToMetric Ton", 0.90718474);
 		weightConversionValues.put("TonToTon", 1.0);
-
 	}
 
 	public double calculateCurrency(double input, String from, String to) 
@@ -399,7 +398,7 @@ public class ConversionUtility
 			// Parse the XML Data from the URL
 			xr.parse(new InputSource(url.openStream()));
 
-			Iterator<Currency> currencyIterator = mySaxParser.currencyList.iterator();			
+			Iterator<Currency> currencyIterator = mySaxParser.currencyList.iterator();
 			while (currencyIterator.hasNext()) 
 			{
 
