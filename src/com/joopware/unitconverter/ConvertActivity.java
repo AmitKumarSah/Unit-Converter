@@ -4,6 +4,9 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -53,6 +56,11 @@ public class ConvertActivity extends Activity
 	public void buttonListen(int convertType)
 	{
 		conversionType = convertType;
+		ConnectivityManager conMgr =  (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+//		if(conMgr.getNetworkInfo(0).getSthate() == NetworkInfo.State.DISCONNECTED  ||  conMgr.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED)
+//		{
+//			Toast.makeText(getApplicationContext(), "Currency conversion requires an active network connection", Toast.LENGTH_LONG);
+//		}
 		convertButton = (Button) findViewById(R.id.convertAreaButton);
 		convertButton.setOnClickListener(new OnClickListener()
 		{
