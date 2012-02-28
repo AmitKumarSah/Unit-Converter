@@ -56,11 +56,16 @@ public class ConvertActivity extends Activity
 	public void buttonListen(int convertType)
 	{
 		conversionType = convertType;
-		ConnectivityManager conMgr =  (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-//		if(conMgr.getNetworkInfo(0).getSthate() == NetworkInfo.State.DISCONNECTED  ||  conMgr.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED)
-//		{
-//			Toast.makeText(getApplicationContext(), "Currency conversion requires an active network connection", Toast.LENGTH_LONG);
-//		}
+		if(conversionType == 1)
+		{
+			ConnectivityManager connec = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+			if(connec.getNetworkInfo(0).getState() == NetworkInfo.State.DISCONNECTED  && connec.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED)
+			{
+				Toast noInternetText = Toast.makeText(getApplicationContext(), "Currency conversion requires an active network connection", Toast.LENGTH_LONG);
+				noInternetText.show();
+				return;
+			}
+		}
 		convertButton = (Button) findViewById(R.id.convertAreaButton);
 		convertButton.setOnClickListener(new OnClickListener()
 		{

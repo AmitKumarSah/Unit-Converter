@@ -1,5 +1,7 @@
+/gen
+/.git
+/.settings
+/assets
 /bin
 /keytools
-/AndroidManifest.xml
-/default.properties
-/design
+/.classpath
