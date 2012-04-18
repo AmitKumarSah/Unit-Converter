@@ -56,23 +56,13 @@ public class ConvertActivity extends Activity
 	public void buttonListen(int convertType)
 	{
 		conversionType = convertType;
-		if(conversionType == 1)
-		{
-			ConnectivityManager connec = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-			if(connec.getNetworkInfo(0).getState() == NetworkInfo.State.DISCONNECTED  && connec.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED)
-			{
-				Toast noInternetText = Toast.makeText(getApplicationContext(), "Currency conversion requires an active network connection", Toast.LENGTH_LONG);
-				noInternetText.show();
-				return;
-			}
-		}
+		checkNetworkConnectivity(conversionType);
 		convertButton = (Button) findViewById(R.id.convertAreaButton);
 		convertButton.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
 			{
-
 				result = (TextView) findViewById(R.id.resultLabel);
 				originalValue = (TextView) findViewById(R.id.sourceArea);
 				String originalValueString = originalValue.getText().toString();
@@ -89,5 +79,19 @@ public class ConvertActivity extends Activity
 				}
 			}
 		});
+	}
+	
+	public void checkNetworkConnectivity(int conversionType)
+	{
+		if(conversionType == 1)
+		{
+			ConnectivityManager connec = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+			if(connec.getNetworkInfo(0).getState() == NetworkInfo.State.DISCONNECTED  && connec.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED)
+			{
+				Toast noInternetText = Toast.makeText(getApplicationContext(), "Currency conversion requires an active network connection", Toast.LENGTH_LONG);
+				noInternetText.show();
+				return;
+			}
+		}
 	}
 }
