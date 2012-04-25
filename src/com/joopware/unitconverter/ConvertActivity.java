@@ -80,18 +80,20 @@ public class ConvertActivity extends Activity
 			}
 		});
 	}
-	
-	public void checkNetworkConnectivity(int conversionType)
+
+	public boolean checkNetworkConnectivity(int conversionType)
 	{
-		if(conversionType == 1)
+		ConnectivityManager connec = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+		if(connec.getNetworkInfo(0).getState() == NetworkInfo.State.DISCONNECTED  && connec.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED)
 		{
-			ConnectivityManager connec = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-			if(connec.getNetworkInfo(0).getState() == NetworkInfo.State.DISCONNECTED  && connec.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED)
+			if(conversionType == 1)
 			{
 				Toast noInternetText = Toast.makeText(getApplicationContext(), "Currency conversion requires an active network connection", Toast.LENGTH_LONG);
 				noInternetText.show();
-				return;
 			}
+			return false;
 		}
+		else
+			return true;
 	}
 }
