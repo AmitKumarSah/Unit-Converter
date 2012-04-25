@@ -26,7 +26,7 @@ public class ConvertActivity extends Activity
 	private ConversionUtility converter;
 	private TextView result, originalValue;
 	private Button convertButton;
-	private int conversionType;
+	private ConvertType conversionType;
 
 	public ConvertActivity()
 	{
@@ -53,7 +53,7 @@ public class ConvertActivity extends Activity
 	 * Provides the function to monitor button clicks on the convert button.
 	 * When pressed, conversion is performed.
 	 */
-	public void buttonListen(int convertType)
+	public void buttonListen(ConvertType convertType)
 	{
 		conversionType = convertType;
 		checkNetworkConnectivity(conversionType);
@@ -81,12 +81,12 @@ public class ConvertActivity extends Activity
 		});
 	}
 
-	public boolean checkNetworkConnectivity(int conversionType)
+	public boolean checkNetworkConnectivity(ConvertType conversionType)
 	{
 		ConnectivityManager connec = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 		if(connec.getNetworkInfo(0).getState() == NetworkInfo.State.DISCONNECTED  && connec.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED)
 		{
-			if(conversionType == 1)
+			if(conversionType == ConvertType.currency)
 			{
 				Toast noInternetText = Toast.makeText(getApplicationContext(), "Currency conversion requires an active network connection", Toast.LENGTH_LONG);
 				noInternetText.show();

@@ -436,28 +436,28 @@ public class ConversionUtility
 	 * The desired conversion type. E.g. Area, Volume etc.
 	 * @return The result of the conversion.
 	 */
-	public double convertValues(double input, String from, String to, int conversionType) 
+	public double convertValues(double input, String from, String to, ConvertType conversionType) 
 	{
 		double result = 0.0;
 		switch (conversionType) 
 		{
-		case 0:
+		case area:
 			result = input * areaConversionValues.get(from + "To" + to);
 			break; // 0 = Area
-		case 1:
+		case currency:
 			result = calculateCurrency(input, from, to);
 			DecimalFormat df = new DecimalFormat("#.##");
 			result = Double.parseDouble(df.format(result));
-			break; // 1 = Currency
-		case 2:
+			break;
+		case length:
 			result = input * lengthConversionValues.get(from + "To" + to);
-			break; // 2 = Length
-		case 3:
+			break;
+		case volume:
 			result = input * volumeConversionValues.get(from + "To" + to);
-			break; // 3 = Volume
-		case 4:
+			break;
+		case weight:
 			result = input * weightConversionValues.get(from + "To" + to);
-			break; // 4 = Weight
+			break;
 		}
 		return result;
 	}

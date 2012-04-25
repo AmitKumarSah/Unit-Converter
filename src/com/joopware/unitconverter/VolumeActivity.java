@@ -24,6 +24,6 @@ public class VolumeActivity extends ConvertActivity
 		
 		/*Sets up the listened for button clicks on the convert button. Also informs what type of calculation to perform
 		E.g. area, length etc*/
-		buttonListen(3);	//3 identifies volume
+		buttonListen(ConvertType.volume);
 	}
 }
