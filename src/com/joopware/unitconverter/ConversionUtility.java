@@ -17,8 +17,7 @@ import org.xml.sax.XMLReader;
  */
 public class ConversionUtility 
 {
-	private HashMap<String, Double> areaConversionValues, lengthConversionValues, volumeConversionValues, 
-	weightConversionValues;
+	private HashMap<String, Double> areaConversionValues, lengthConversionValues, volumeConversionValues, weightConversionValues;
 
 	/**
 	 * The constructor initialises each HashMap and fills it with all the
@@ -439,11 +438,11 @@ public class ConversionUtility
 	public double convertValues(double input, String from, String to, ConvertType conversionType) 
 	{
 		double result = 0.0;
-		switch (conversionType) 
+		switch (conversionType)
 		{
 		case area:
 			result = input * areaConversionValues.get(from + "To" + to);
-			break; // 0 = Area
+			break;
 		case currency:
 			result = calculateCurrency(input, from, to);
 			DecimalFormat df = new DecimalFormat("#.##");
